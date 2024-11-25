@@ -26,12 +26,12 @@
 
 **yaml docker-compose.yml**
 
-{
-"GNU nano 8.1"                                                        
-"version: '3.8' "
-"services: "
-  " wireguard: "
-    " container_name: wireguard "
+'''
+GNU nano 8.1                                                        
+version: '3.8'
+services: 
+  wireguard: 
+    container_name: wireguard
     image: linuxserver/wireguard
     environment:
       - PUID=1000
@@ -57,7 +57,7 @@
       - SYS_MODULE
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1}
-
+'''
 4. Run Wireguard
   'docker-compose up -d'
 5. Check logs to get the QR Code
@@ -76,7 +76,7 @@
 1. Find the configuaretion file
    'ls /opt/wireguard/config'
 2. Copy the .conf file to your laptop
-
+'''
 {[Interface]
 PrivateKey = iLwC8xbCzwVd5j9s7Et/72d6keAAVTlkmxcY/wX6Ako=
 ListenPort = 518
@@ -89,6 +89,6 @@ PublicKey = P5GnsQQZk4X0KilGkKNg5ND/XZjV0KP7QDNuShSCcG4=
 PresharedKey = 5X6AWptfcPEHqhgi3nVlEb6vx833rLQic/ofI4TMy5s=
 AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = 45.55.41.235:51820'}
-
+'''
 3. Import the file into the Wireguard app of CLI
 4. Follow the same steps as mobile to confirm functionality using IPLeak.net
